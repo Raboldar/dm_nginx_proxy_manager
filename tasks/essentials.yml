@@ -1,0 +1,14 @@
+---
+
+- name: Add '{{ ansible_user }} to sudoers'
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: "^%wheel"
+    line: "{{ ansible_user }} ALL=(ALL) NOPASSWD: ALL "
+    validate: "/usr/sbin/visudo -cf %s"
+
+- name: Update packages (Debain based)
+  apt:
+    update_cache: yes
+    upgrade: yes
+

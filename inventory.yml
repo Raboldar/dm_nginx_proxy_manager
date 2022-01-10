@@ -1,0 +1,8 @@
+# Read the README.md file to generate the required variables.
+targets:
+  hosts:
+    nginx_host:
+      ansible_connection: ssh
+      ansible_host: 192.168.100.198
+      ansible_user: redant
+      ansible_private_key_file: ~/.ssh/nginx_proxy_manager_host

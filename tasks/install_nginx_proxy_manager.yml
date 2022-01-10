@@ -1,0 +1,12 @@
+---
+- name: Copy docker-compose file to server
+  copy:
+    src: docker_nginx_proxy_manager/
+    dest: "/home/{{ ansible_user }}/docker_nginx_proxy_manager/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Start the application
+  shell:
+    cmd: "docker-compose -f docker-compose.yml up -d"
+    chdir: "/home/{{ ansible_user }}/docker_nginx_proxy_manager/" 
