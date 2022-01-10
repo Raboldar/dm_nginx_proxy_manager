@@ -1,2 +1,2 @@
-# dm_nginx_proxy_manager
+# Deployment Nginx Proxy Manager
 Module de deployment pour Nginx Proxy Manager via Ansible et Docker-compose.
